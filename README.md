@@ -188,10 +188,10 @@ In the context of the scenario "subsidiaries now need to achieve SOC 2” presen
 
 The two options I see:
 
-Use a GRC SaaS tool for the main org (which by the scenario would fit very well). Perform a gap analysis on the subsidiary to understand what systems they are using, and eventually migrate over to the tools the main org is using. This way we achieve a single view, while also achieving added benefits of not having to operate effectively 2 control sets (one for the subsidiary, one for the main org). We can rely entirely on the main orgs controls to manage this now integrated subsidiary. 
+- Use a GRC SaaS tool for the main org (which by the scenario would fit very well). Perform a gap analysis on the subsidiary to understand what systems they are using, and eventually migrate over to the tools the main org is using. This way we achieve a single view, while also achieving added benefits of not having to operate effectively 2 control sets (one for the subsidiary, one for the main org). We can rely entirely on the main orgs controls to manage this now integrated subsidiary. 
 
-Consider a more flexible option like JupiterOne, Backstage, or use policy-as-code or open source alternatives for different use-cases. 
+- Consider a more flexible option like JupiterOne, Backstage, or use policy-as-code or open source alternatives for different use-cases. 
 
 Ultimately regardless of the implementation a mapping of SOC 2 Trust Services Criteria to our controls would take place. With these control descriptions we can contextualise how these apply to our business, and then perform either API calls to get the data in real time or make queries to get data to perform continuous monitoring of these controls. There are considerations that would have to take place regarding the permissions assigned to analysts in terms of what they are allowed to view and get, but this could be solved through just in time access or time based access tokens if needed. 
 
-Ultimately this creates an automated workstream that requires very little manual work once set up, and places less resource burden on the stakeholders of the GRC team. 
+This creates an automated workstream that requires very little manual work once set up, and places less resource burden on the stakeholders of the GRC team. 
