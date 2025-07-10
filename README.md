@@ -103,10 +103,10 @@ Again not an exhaustive list, but just a few examples from each area identified 
 
 🚀*The company has been a success and now has over 5000 employees. The CRM solution they built, AWS environment and CI/CD tooling have scaled well and they are now making over 100 production changes per day. In order to expand internationally they have bought several smaller companies around the world.*
 
-*The company now has much bigger clients and they are taking an interest in how security is managed, meaning some subsidiaries now need to achieve SOC 2 or ISO 27001 certification. At the same time the CTO is keen to ensure the company stays “tech-first” in its approach to security, and avoid introducing manual or inefficient GRC processes.*🚀
+  *The company now has much bigger clients and they are taking an interest in how security is managed, meaning some subsidiaries now need to achieve SOC 2 or ISO 27001 certification. At the same time the CTO is keen to ensure the company stays “tech-first” in its approach to security, and avoid introducing manual or inefficient GRC processes.* 🚀
 
 
-<h1><span style="color:#D6336C;">Question: Given the changes to the company, what (if anything) changes about your answers to the questions in the first part? 
+<h1><span style="color:#D6336C;">Question: Given the changes to the company, what (if anything) changes about your answers to the questions in the first part❓ 
 </span></h1>
 
 
@@ -114,7 +114,7 @@ With the context of the organisation now being much larger, more mature, we shou
 
 So if we revisit the prioritisation list:
 
-# High Priority
+# 🔴High Priority
 
 - Phishing program to better educate users (as this is a common attack vector)
 - Encrypt databases containing PII
@@ -122,7 +122,7 @@ So if we revisit the prioritisation list:
 - Scan public repos to ensure no secrets in plaintext in code
 - Ensure MFA is enabled for users accessing company assets and data
 
-# Medium Priority
+# 🟠Medium Priority
 
 - Enable logging and start creating alerts for key indicators of compromise
 - Work towards getting company issued machines. Create an image that builds in security controls. Have a VPN/AV/DLP deployed by default
@@ -131,7 +131,7 @@ So if we revisit the prioritisation list:
 - Establish an asset inventory / list. 
 
 
-# Low Priority
+# 🟢Low Priority
 
 - Vendor risk - obtain security attestations, check scope of systems being procured
 - Build policies / procedures to better govern JML, Data Governance, etc
@@ -148,7 +148,7 @@ One new challenge being faced is that it's likely now the main organisation is o
 
 Another challenge is the company size likely has dedicated resources just for more niche parts of the business, such as regulatory compliance obligations. How does the organisation remain compliant with GDPR? Has the company expanded internationally? Would we now have to comply with their regional regulatory compliance obligations, ie APRA for Australia, EU DORA, etc?. These are the new challenges and questions I'd expect to be asked as a high priority. 
 
-<h1><span style="color:#D6336C;">Question: What do you think will be the biggest challenges, for a startup that’s grown quickly, in getting security certifications such as ISO 27001? 
+<h1><span style="color:#D6336C;">Question: What do you think will be the biggest challenges, for a startup that’s grown quickly, in getting security certifications such as ISO 27001❓ 
 </span></h1>
 
 ISO27001 requires a well documented and process driven framework that effectively illustrates controls and controls owners operating them effectively.  
@@ -175,7 +175,7 @@ Management buy-in. Ultimately it’s critical to get management buy-in for a fas
 
 Employee buy-in. This would just represent an overall culture shift. Again it’s important to communicate the why though this might look slightly different to the why of management. As an example, to a devops team, this can be demonstrated by showing the effectiveness of having centralised playbooks with prebaked CIS benchmarks in an ansible playbook. This saves devops teams time deploying these manually, and saves time overall by having standardisation meaning they don’t have to write custom scripts every time they deploy. 
 
-<h1><span style="color:#D6336C;">Question:How would you introduce GRC requirements and initiatives while minimising manual processes?
+<h1><span style="color:#D6336C;">Question:How would you introduce GRC requirements and initiatives while minimising manual processes❓
 </span></h1>
 
 
