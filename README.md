@@ -1,194 +1,264 @@
-# 🚀 Security Strategy for a Growing Tech Startup
+# 🚀 Security Strategy at a Fast-Growing Startup
 
-## Scenario
+## 📘 Scenario
 
-You have just joined a fast-growing startup as the **first and only security hire**. The company has ~100 employees. Security has not been a major consideration, and decisions have historically been made based on immediate functionality.
+You have just joined a very fast-growing startup as the **only security person**. The company has roughly **100 employees**, and the **CTO** has been making decisions based on functional need — **security has not always been considered**.
 
-### Current State
-- Custom-built CRM solution hosted in AWS
-- CI/CD tooling in use with multiple daily production changes
-- Heavy reliance on SaaS for internal tools (email, office, etc.)
-- BYOD (staff buy and expense their own laptops and accessories)
+You’ve been hired by the CTO for your **security knowledge and unique perspective**.
 
----
-
-## 🧠 Initial Thoughts & Assumptions
-
-- Immature security posture due to startup size and growth speed
-- AWS architecture and CI/CD pipelines likely lack security best practices
-- SaaS usage and third-party risk not tracked or governed
-- Asset management is probably non-existent (no MDM, inventory, or patching)
-- No phishing or security awareness training
+The company has:
+- Built a **custom CRM solution** sold to clients
+- Hosted it on **AWS**
+- Uses **CI/CD tooling** to make a handful of production changes per day
+- Relies on **SaaS** tools for all other services (email, office, etc.)
+- Encourages **staff to purchase their own IT** (laptops, accessories) and expense it
 
 ---
 
-## 🛠️ Initial Approach
+## 🔍 How Would You Identify and Prioritise Potential Security Problems?
 
-Focus on **risk reduction**, not governance (yet). Start with identifying the highest risks using a lightweight, business-friendly approach.
+### 🧠 Initial Thoughts / Assumptions
 
-### Scoping Areas:
-
-1. **AWS Environment**
-2. **CI/CD Pipelines**
-3. **Third-party Tools and Company Assets**
-
----
-
-## 🔍 Deep-Dive Scoping Questions
-
-### 🔐 AWS Architecture
-- Diagrams available? Endpoints exposed?
-- Authentication and access methods?
-- IAM roles and permissions
-- MFA and SSO enforcement
-- VPC structure and security groups
-- Encryption (S3, RDS, etc.)
-- Logging & monitoring (CloudTrail, GuardDuty, etc.)
-- Availability and redundancy
-- Secrets management
-
-### ⚙️ CI/CD Pipeline
-- Who can deploy to prod?
-- Code review / approval process?
-- Secrets scanning in repos?
-- SAST/DAST in build pipelines?
-- Environment separation (dev/test/prod)
-
-### 💻 Company Assets & Third Parties
-- Visibility into devices (inventory?)
-- Device encryption, updates, and antivirus?
-- MDM or DLP in place?
-- JML process (Joiner-Mover-Leaver)?
-- SaaS tools in use — what data is shared, and how?
-- Vendor security assessments?
+- Small org, **immature functions**, and you're the **first security hire** — solutions must be pragmatic and resource-conscious.
+- **AWS architecture** likely lacks security best practices; needs a review.
+- **CI/CD** pipelines may lack deployment control, peer review, and security scans.
+- **Third-party SaaS** usage should be audited: what data is being shared and how?
+- **Laptops & BYOD**: asset management, encryption, VPNs, antivirus, MDM (Azure Intune), etc.
+- No apparent **phishing training** in place.
 
 ---
 
-## 🧑‍💼 Stakeholder Engagement
+## 🧭 Approach
 
-Hold 1:1s with SMEs:
-> "Can you walk me through how you do X?"  
-> "How is Y managed today?"
+Taking into account:
+- Org size, resource limitations
+- CRM with **customer PII** — reputation risk during growth phase
+- Focus first on **reducing immediate risk** vs. building long-term governance
+- Start assuming **limited/no documentation**
 
-Lean on any documentation that exists. If none, start creating it.
+### ✍️ Scoping Operation
 
----
-
-## 🔐 Security Control Prioritisation (Stage 1: Startup Phase)
-
-### High Priority
-- 🧠 Phishing training program
-- 🔒 Encrypt PII in databases
-- 🛡️ Deploy MDM (e.g., Intune), enforce AV/DLP
-- 🔍 Scan public repos for secrets
-- 🔐 Enforce MFA across assets
-
-### Medium Priority
-- 📈 Enable logging and alerts
-- 💻 Transition to company-issued devices with secure baseline images
-- 🔁 Introduce peer-reviewed change process
-- 👥 IAM reviews (monthly/quarterly)
-- 📋 Create and maintain asset inventory
-
-### Low Priority
-- 📄 Vendor risk assessments
-- 🧾 Create policies/procedures (JML, Data Governance)
-- 🗺️ AWS documentation/diagrams
-- 📆 Medium-long term security roadmap
-- 📜 High-level infosec policy
-- 📏 Begin security standard alignment (e.g., ISO, CE)
+Scoping covers:
+- Review of **AWS**
+- Review of **CI/CD & deployment**
+- Review of **company assets & third-party SaaS**
 
 ---
 
-## 🚀 Company Grows: 5000+ Employees, Global Expansion
+## 🔩 Review Areas
 
-- CRM and CI/CD scaled
-- 100+ prod changes/day
-- Subsidiaries acquired globally
-- Client interest in security → SOC 2 / ISO 27001 compliance
-- CTO wants a **tech-first** GRC strategy
+### 1. AWS Architecture
 
----
+- Architecture diagrams for CRM?
+- How are CRM endpoints exposed?
+- How is authentication handled?
 
-## 🧭 Updated Security Approach (Stage 2: Mature Org)
+#### AWS Account(s)
 
-Now shift from **firefighting to governance**:
-
-### New Priorities
-
-#### High
-- ✅ Assume previous high-priority risks have been remediated
-
-#### Medium-to-High
-- 📄 Centralised, accessible policies/procedures/guidelines
-- 📊 Build and operate formal risk register
-- 🔄 Control effectiveness mapped to policies
-- 🧩 Subsidiary integration into main GRC framework
-- 🌍 Global regulatory compliance (GDPR, APRA, DORA, etc.)
+- IAM roles and permissions: **Who has access and why?**
+- **MFA**: Required for AWS? Using SSO via Okta/Ping?
+- Network segregation: VPCs, security groups
+- **Encryption**: Are S3/RDS encrypted?
+- **Logging/Monitoring**: CloudTrail, CloudWatch, GuardDuty?
+- Availability: Redundancy? Backups?
+- **Secrets management**: How are production secrets handled?
 
 ---
 
-## 🧩 Certification Challenges: ISO 27001 in a Fast-Growing Org
+### 2. CI/CD Pipelines
 
-### 🚫 Common Challenges
-
-#### 📑 Documentation
-- Missing or siloed documentation
-- Resistance to process/policy introduction
-
-#### 🧪 Tech
-- Diverse tech stacks, unstandardised processes
-- Missing SDLC, patching, or backup controls
-
-#### 👥 Resources
-- Staff wearing multiple hats, no bandwidth for GRC tasks
-
-#### ⚖️ Risk
-- Reactive instead of proactive approach
-- Lack of mature risk culture
-
-#### 🧠 Culture
-- Management buy-in required
-- Need to **justify the "why"**
-- Employee-level culture shift needed
+- Who can deploy to production?
+- Are there **peer reviews** before merging?
+- Any **SAST/DAST scanning**?
+- Are there separate environments (dev/test/prod)? Are they **mirrored**?
 
 ---
 
-## 🧠 Minimising Manual GRC with Automation
+### 3. Company Assets / Third Parties
 
-### Traditional vs. Engineering Approach
-
-| Traditional GRC            | GRC Engineering                          |
-|----------------------------|-------------------------------------------|
-| Manual evidence collection | API-driven evidence gathering             |
-| Time-consuming follow-ups  | Continuous control monitoring             |
-| Compliance-focused         | Security-first mindset                    |
-| Siloed                     | Cross-functional automation               |
-
-### Options for Implementation
-
-#### ✅ Option 1: SaaS GRC Tool (Vanta, Drata)
-- Use for parent org
-- Migrate subsidiaries over time
-- Single control set across the org
-
-#### 🔧 Option 2: Flexible / Custom GRC Tooling
-- JupiterOne, Backstage, Policy-as-Code, Open-source
-- Map SOC 2 TSC to real-time data queries
-- Continuous monitoring with minimal overhead
+- **BYOD**: Any device controls?
+- Is there an **asset inventory**?
+- Are laptops:
+  - Encrypted?
+  - Updated regularly?
+  - Running Antivirus / DLP?
+- Is an **MDM** solution deployed?
+- JML process: Are assets/data retrieved on offboarding?
+- SaaS vendor list:
+  - What data is shared?
+  - How is it shared?
+  - Data type/volume?
 
 ---
 
-## 🧠 Summary
+## 🎤 Info Gathering
 
-- Prioritise **risk-focused** security in early stages
-- Transition to **governance-focused** security as you scale
-- Invest in **GRC automation** early to enable scalability
-- Get buy-in from both **management** and **staff**
-- Tailor security approaches for **subsidiaries and regions**
+Conduct interviews with SMEs:
+> “Can you walk me through how you do X?”
+> “How is Y handled today?”
+
+Lean on:
+- Documentation
+- Policies / procedures
 
 ---
 
-## 📌 Final Thoughts
+## 📊 Prioritisation: Risk x Likelihood Matrix
 
-Security success in a fast-scaling environment requires pragmatism, automation, and a strong understanding of both technology and people. This README provides a blueprint for balancing high-impact security initiatives with efficient governance.
+### 🔴 High Priority
+
+- Implement **phishing training**
+- Encrypt databases with **PII**
+- Protect assets with:
+  - MDM
+  - JML
+  - Remote wipes
+  - AV/DLP
+- Scan repos for **plaintext secrets**
+- Enforce **MFA** for all systems
+
+### 🟠 Medium Priority
+
+- Enable logging + alerts for **IOC**
+- Company-issued laptops with:
+  - Default security image (VPN, AV, DLP)
+- Peer review for deployments
+- Monthly/quarterly **IAM reviews**
+- Build and maintain **asset inventory**
+
+### 🟡 Low Priority
+
+- **Vendor risk** assessments
+- Define policies/procedures (JML, governance)
+- Diagram AWS architecture
+- Build medium/long-term **security roadmap**
+- Create **Infosec policy**, guidance (e.g. password best practices)
+- Begin **security standard** scoping (e.g. CE, ISO 27001)
+
+---
+
+## 📈 The Company Has Grown
+
+Now:
+- 5,000+ employees
+- CRM, AWS, CI/CD scaled well (100+ daily deployments)
+- Expanded via **global acquisitions**
+- Bigger clients now expect **SOC 2 / ISO 27001**
+- CTO wants to stay **tech-first**, avoid manual GRC
+
+---
+
+## 🧠 Updated Perspective
+
+Shift from **firefighting** → **governance and structure**
+
+### 🔁 Revisiting Prioritisation
+
+> The old **low priority** items now become high priority
+
+#### ✅ High Priority Now Includes:
+
+- Centralised **policies, procedures, guidelines**
+- Documented **controls & control owners**
+- **Formal risk register**
+- **Subsidiary integration**: Align to parent governance/control set
+- Global compliance: GDPR, APRA (AU), DORA (EU)
+
+---
+
+## 🎯 Challenges for ISO 27001 Certification
+
+### 🗂️ Documentation
+
+- Lack of central documentation
+- Existing processes operate in silos
+- Need to perform **gap analysis**
+- Must drive **team buy-in** to fix process weaknesses
+
+### ⚙️ Technical Gaps
+
+- Varying stacks, inconsistent processes
+- Need for standard SDLC, patch mgmt
+- **Automated playbooks** (e.g. CIS via Ansible) can help
+
+### 🧑‍💻 Resource Constraints
+
+- People wearing multiple hats
+- Convince teams to **prioritise security controls**
+
+### ⚖️ Risk Awareness
+
+- ISO requires **risk-based thinking**
+- Risk mindset likely missing in fast-growth mode
+- Introduce **proactive risk management**
+
+### 👥 Cultural Shift
+
+#### Management Buy-In
+
+- Why implement ISO?
+  - Reduce breach risk
+  - Improve reputation
+  - Unlock enterprise sales
+- Use real-world examples as rationale
+
+#### Employee Buy-In
+
+- Frame benefits in their language:
+  - DevOps: "Standardised playbooks = time saved"
+  - GRC: "Less firefighting"
+
+---
+
+## 🤖 Automating GRC
+
+### Goal: **Minimise Manual Processes**
+
+### 🧠 Pitching GRC Engineering
+
+Option A (Traditional):
+> Manual evidence collection, screenshots, GRC tools chasing teams
+
+Option B (GRC Engineering):
+> Use low/no-code or API tools to auto-collect evidence
+
+- Upskills GRC
+- Reduces burden on tech teams
+- Enables **continuous monitoring**
+
+### 🔧 Implementation Path
+
+#### For Main Org (SaaS-oriented)
+
+- Use Vanta/Drata for SOC 2/ISO 27001
+- Map Trust Services Criteria → Controls → Evidence (via API)
+
+#### For Subsidiaries (non-SaaS or on-prem)
+
+- Perform **gap analysis**
+- Migrate to main org’s tech stack/tools
+- Integrate over time to align GRC + control sets
+
+#### Consider Flexible Options
+
+- Tools like **JupiterOne**, **Backstage**
+- **Policy-as-code**
+- **Open source** solutions for control enforcement
+
+### 🧩 Key Concepts
+
+- Automate evidence collection via:
+  - API queries
+  - Real-time system data
+- Minimise stakeholder fatigue
+- Build once, monitor continuously
+
+---
+
+## 🏁 Final Notes
+
+This is **not an exhaustive list** — it’s a structured view of initial and scaled security approaches based on the real-world context of a fast-growing tech company.
+
+- Short-term: reduce risk quickly
+- Long-term: build scalable governance and automation
+
