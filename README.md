@@ -1,5 +1,4 @@
-# 🐙 Octopus Energy Technical Task  
-### Cieran Almond
+# 🐙 Octopus Energy Technical Task - Cieran Almond
 
 *You have just joined a very fast growing startup as the only security person. The company has roughly 100 employees and the CTO has been making decisions about what is needed based on function. Security is not always considered.*
 
@@ -98,5 +97,17 @@ Low Priority
 
 
 Again not an exhaustive list, but just a few examples from each area identified during the scoping stage. 
+
+
+*The company has been a success and now has over 5000 employees. The CRM solution they built, AWS environment and CI/CD tooling have scaled well and they are now making over 100 production changes per day. In order to expand internationally they have bought several smaller companies around the world.*
+
+*The company now has much bigger clients and they are taking an interest in how security is managed, meaning some subsidiaries now need to achieve SOC 2 or ISO 27001 certification. At the same time the CTO is keen to ensure the company stays “tech-first” in its approach to security, and avoid introducing manual or inefficient GRC processes.*
+
+
+<h1><span style="color:#D6336C;">Question: Given the changes to the company, what (if anything) changes about your answers to the questions in the first part? 
+</span></h1>
+
+
+
 
  
