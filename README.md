@@ -10,7 +10,7 @@
 *The company has built a custom CRM solution that it sells to clients. It is hosted in AWS and they use CI/CD tooling to make a handful of production changes per day. Any other services they need to run (email, office productivity, etc.) are bought as SaaS services. Staff are encouraged to buy their own IT (like laptops and accessories) and expense it.*
 
 
-<h1><span style="color:#D6336C;">How would you identify and prioritise any potential security problems?</span></h1>
+<h1><span style="color:#D6336C;">Question: How would you identify and prioritise any potential security problems?</span></h1>
 
 # Initial thoughts / assumptions being made from the initial read:
 
@@ -67,7 +67,7 @@ Expanding further, things I would be considering for each of the above bulletpoi
 
 Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
 
-<h1><span style="color:#D6336C;">Making some assumptions about what you might expect to find, what are the most important controls you would look to implement?
+<h1><span style="color:#D6336C;">Question: Making some assumptions about what you might expect to find, what are the most important controls you would look to implement?
 </span></h1>
 
 In terms of prioritisation, using a risk x likelihood method I would prioritize dependent on the answers given in part one, which would look something like: 
