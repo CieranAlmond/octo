@@ -69,7 +69,7 @@ Identifying a lot of these problems would likely involve speaking to SME’s in 
 
 In terms of prioritisation, using a risk x likelihood method I would prioritize dependent on the answers given in part one, which would look something like: 
 
-High Priority
+# High Priority
 
 - Phishing program to better educate users (as this is a common attack vector)
 - Encrypt databases containing PII
@@ -77,7 +77,7 @@ High Priority
 - Scan public repos to ensure no secrets in plaintext in code
 - Ensure MFA is enabled for users accessing company assets and data
 
-Medium Priority
+# Medium Priority
 
 - Enable logging and start creating alerts for key indicators of compromise
 - Work towards getting company issued machines. Create an image that builds in security controls. Have a VPN/AV/DLP deployed by default
@@ -86,7 +86,7 @@ Medium Priority
 - Establish an asset inventory / list. 
 
 
-Low Priority
+# Low Priority
 
 - Vendor risk - obtain security attestations, check scope of systems being procured
 - Build policies / procedures to better govern JML, Data Governance, etc
