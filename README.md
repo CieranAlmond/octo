@@ -159,9 +159,9 @@ So if we revisit the prioritisation list:
  -Create a high level infosec policy, issue guidance on best practise (password length, data sharing, etc) - have this socialised during onboarding or within a HR platform
  -Consider scoping the company against a security standard (CE, ISO, etc) to establish a baseline
 
-What I would expect now is that the items considered lower priority would now invert. What we would now be looking to do is build good governance, operate against frameworks, perform horizon scanning (for future regulatory/security compliance obligations), with the assumption that those higher priority items have now been remediated.
+What I would expect now is that the items considered lower priority would now start to be addressed as the business matures. What we would now be looking to do is build good governance, operate against frameworks, perform horizon scanning (for future regulatory/security compliance obligations). We should still be operating effective controls to address our medium and higher priority risks, but with good processes some of these gaps would be removed (ie at this point a sound JML process should be in place).
 
-We should now look to build centralised, easily accessible Policies, Procedures, and Guidelines. These should have controls mapped to test effectiveness (either in the form of traditional GRC or GRC Engineering), have established a formal risk process and risk register, and have a way to track these risks.
+We should now look to build centralised, easily accessible Policies, Procedures, and Guidelines. These should have controls mapped to test effectiveness (either in the form of traditional GRC or GRC Engineering), have established a formal risk process and risk register, and have a way to track these risks. Risks can be better contextualised to have inherent and residual risk scores to better illustrate their "actual" priorities.
 
 One new challenge being faced is that it's likely now the main organisation is operating effectively, but the subsidiaries or acquisitions probably don’t align to the same governance the main org is, so the new challenge would be building a framework that allows you to better integrate subsidiaries into the governance and control frameworks of the main organization. 
 
