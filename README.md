@@ -68,6 +68,37 @@ Expanding further, things I would be considering for each of the above bulletpoi
 Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
 
 <h1><span style="color:#D6336C;">Making some assumptions about what you might expect to find, what are the most important controls you would look to implement?
-?</span></h1>
+</span></h1>
+
+In terms of prioritisation, using a risk x likelihood method I would prioritize dependent on the answers given in part one, which would look something like: 
+
+High Priority
+
+- Phishing program to better educate users (as this is a common attack vector)
+- Encrypt databases containing PII
+- Protect assets by deploying MDM solution. Establish a JML process for safe return of assets, or perform remote wipes to ensure company data is deleted. Deploy AV on company machines
+- Scan public repos to ensure no secrets in plaintext in code
+- Ensure MFA is enabled for users accessing company assets and data
+
+Medium Priority
+
+- Enable logging and start creating alerts for key indicators of compromise
+- Work towards getting company issued machines. Create an image that builds in security controls. Have a VPN/AV/DLP deployed by default
+- Introduce a change process for deploying. At least have a peer review of deployments to prevent damaging codebase.
+- Perform IAM reviews on a monthly/quarterly basis depending on permissions granted.#
+- Establish an asset inventory / list. 
+
+
+Low Priority
+
+- Vendor risk - obtain security attestations, check scope of systems being procured
+- Build policies / procedures to better govern JML, Data Governance, etc
+- Documentation / diagramming of AWS architecture
+- Build a medium to long term security roadmap
+ -Create a high level infosec policy, issue guidance on best practise (password length, data sharing, etc) - have this socialised during onboarding or within a HR platform
+ -Consider scoping the company against a security standard (CE, ISO, etc) to establish a baseline
+
+
+Again not an exhaustive list, but just a few examples from each area identified during the scoping stage. 
 
  
