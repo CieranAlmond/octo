@@ -60,7 +60,7 @@ Using the NIST framework we can then categorise current activities and gaps into
 - JML process. What happens when a user leaves? Does company data get deleted?
 - Do we perform any SAST/DAST scanning in the build pipeline to check for packages or secrets being pushed to public repos?
   
-# Repond
+# Respond
  
  - Are any incident management or BCP/DR processes in place?
 
