@@ -181,9 +181,9 @@ Employee buy-in. This would just represent an overall culture shift. Again it’
 
 I think the key here is to sell the idea of GRC engineering to management, and then stakeholders. In theory it should be a good sell as you are presenting the following options
 
-> operate a manual GRC process, with a GRC tool or spreadsheet. Have GRC analysts chase engineering teams, HR, Legal, Privacy, etc asking for screenshots, which takes away time from teams in order to satisfy compliance obligations.
+> ⏳ Operate a manual GRC process, with a GRC tool or spreadsheet. Have GRC analysts chase engineering teams, HR, Legal, Privacy, etc asking for screenshots, which takes away time from teams in order to satisfy compliance obligations.
 
-> perform GRC engineering. Have GRC analysts get all the data they need in either a code, low code or SaaS tool. This upskills your GRC team, reduces strain on other teams, and also improves GRC from a just in time / point in time compliance obligation into a continuous monitoring program that effectively operates controls. Improved security. 
+> 🧠 Perform GRC engineering. Have GRC analysts get all the data they need in either a code, low code or SaaS tool. This upskills your GRC team, reduces strain on other teams, and also improves GRC from a just in time / point in time compliance obligation into a continuous monitoring program that effectively operates controls. Improved security. 
 
 In the context of the scenario "subsidiaries now need to achieve SOC 2” presents a challenge in itself since our main org is heavily SaaS oriented, so it would have lended itself to an out of the box buy side GRC tool such as Vanta or Drata. However, it’s highly likely that the subsidiaries operate separate processes that don’t necessarily follow a normal workflow, or don’t rely on a SaaS solution (could be onprem). In this case then integrating GRC buy side tools becomes an issue as their out of the box API’s wouldn’t be able to work. 
 
