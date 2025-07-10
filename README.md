@@ -138,16 +138,16 @@ So if we revisit the prioritisation list:
 - Phishing program to better educate users (as this is a common attack vector)
 - Encrypt databases containing PII
 - Protect assets by deploying MDM solution. Establish a JML process for safe return of assets, or perform remote wipes to ensure company data is deleted. Deploy AV on company machines
-- Scan public repos to ensure no secrets in plaintext in code
+- Scan public repos to ensure no secrets in plaintext in code. Ensure that a two eyes model is adopted to reduce developer mistakes or insider threats.
 - Ensure MFA is enabled for users accessing company assets and data
+- Enable logging and start creating alerts for key indicators of compromise
 
 # 🟠Medium Priority
 
-- Enable logging and start creating alerts for key indicators of compromise
 - Work towards getting company issued machines. Create an image that builds in security controls. Have a VPN/AV/DLP deployed by default
-- Introduce a change process for deploying. At least have a peer review of deployments to prevent damaging codebase.
-- Perform IAM reviews on a monthly/quarterly basis depending on permissions granted.#
+- Perform IAM reviews on a monthly/quarterly basis depending on permissions granted.
 - Establish an asset inventory / list. 
+- Work towards an established single point view for secrets management (AWS KMS, etc)
 
 
 # 🟢Low Priority
