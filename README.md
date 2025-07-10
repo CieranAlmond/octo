@@ -77,17 +77,9 @@ For example, let's say that the laptops are not encrypted:
 | Company-issued or BYOD laptops used to access sensitive systems and data are not encrypted at rest. Potential loss, theft or compromise of company data, potentially containing PII. | Protect       | High       | High   | Critical           |
 
 
-Company-issued or BYOD laptops used to access sensitive systems and data are not encrypted at rest. Potential loss, theft or compromise of company data, potentially containing PII.
-Protect 
-High
-High
-Critical
-
-
-
 This is to say this is not fool-proof, as we would also need to understand the context in which risks exist. For example, having an unpatched server running a vulnerable version of a software might on paper have a high inherent risk score, but if we consider it is not internet facing, then that would reduce the overall risk to something lower. 
 
-What this approach would not capture, and that is worth mentioning, is that it might overlook something like lack of any phishing or security training or awareness. Phishing is referenced in the MITRE ATTACK framework and is a really common way to start exploiting vulnerabilities, and in this scenario could be a very valuable thing to start working on early to reduce risk.
+Also this approach might overlook something like lack of any phishing or security training or awareness. Phishing is referenced in the MITRE ATTACK framework and is a really common way to start exploiting vulnerabilities, and in this scenario could be a very valuable thing to start working on early to reduce risk.
 
 
 <h1><span style="color:#D6336C;">Question: Making some assumptions about what you might expect to find, what are the most important controls you would look to implement❓
