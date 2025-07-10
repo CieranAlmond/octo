@@ -1,16 +1,16 @@
 # 🐙 Octopus Energy Technical Task - Cieran Almond
 
 
-💡*You have just joined a very fast growing startup as the only security person. The company has roughly 100 employees and the CTO has been making decisions about what is needed based on function. Security is not always considered.*
+🚀*You have just joined a very fast growing startup as the only security person. The company has roughly 100 employees and the CTO has been making decisions about what is needed based on function. Security is not always considered.*🚀
 
-*You’ve been hired by the CTO for your security knowledge and because you’ll have a different perspective and priorities.*
+*You’ve been hired by the CTO for your security knowledge and because you’ll have a different perspective and priorities.* 🎉
 
 *The company has built a custom CRM solution that it sells to clients. It is hosted in AWS and they use CI/CD tooling to make a handful of production changes per day. Any other services they need to run (email, office productivity, etc.) are bought as SaaS services. Staff are encouraged to buy their own IT (like laptops and accessories) and expense it.*
 
 
 <h1><span style="color:#D6336C;">Question: How would you identify and prioritise any potential security problems❓</span></h1>
 
-# Initial thoughts / assumptions being made from the initial read:
+# Initial thoughts / assumptions being made from the initial read 🧠:
 
 - Small org and immature functions, first security hire. Have to be pragmatic with solutions and with what is addressed based on resource available 
 - AWS architecture probably would need a review, as there likely wouldn’t have had security implementations 
@@ -65,12 +65,12 @@ Expanding further, things I would be considering for each of the above bulletpoi
 
 📝 Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
 
-<h1><span style="color:#D6336C;">Question: Making some assumptions about what you might expect to find, what are the most important controls you would look to implement?
+<h1><span style="color:#D6336C;">Question: Making some assumptions about what you might expect to find, what are the most important controls you would look to implement❓
 </span></h1>
 
 In terms of prioritisation, using a risk x likelihood method I would prioritize dependent on the answers given in part one, which would look something like: 
 
-# High Priority
+# 🔴High Priority
 
 - Phishing program to better educate users (as this is a common attack vector)
 - Encrypt databases containing PII
@@ -78,7 +78,7 @@ In terms of prioritisation, using a risk x likelihood method I would prioritize 
 - Scan public repos to ensure no secrets in plaintext in code
 - Ensure MFA is enabled for users accessing company assets and data
 
-# Medium Priority
+# 🟠Medium Priority
 
 - Enable logging and start creating alerts for key indicators of compromise
 - Work towards getting company issued machines. Create an image that builds in security controls. Have a VPN/AV/DLP deployed by default
@@ -87,7 +87,7 @@ In terms of prioritisation, using a risk x likelihood method I would prioritize 
 - Establish an asset inventory / list. 
 
 
-# Low Priority
+# 🟢Low Priority
 
 - Vendor risk - obtain security attestations, check scope of systems being procured
 - Build policies / procedures to better govern JML, Data Governance, etc
@@ -101,9 +101,9 @@ Again not an exhaustive list, but just a few examples from each area identified 
 
 ---
 
-*The company has been a success and now has over 5000 employees. The CRM solution they built, AWS environment and CI/CD tooling have scaled well and they are now making over 100 production changes per day. In order to expand internationally they have bought several smaller companies around the world.*
+🚀*The company has been a success and now has over 5000 employees. The CRM solution they built, AWS environment and CI/CD tooling have scaled well and they are now making over 100 production changes per day. In order to expand internationally they have bought several smaller companies around the world.*
 
-*The company now has much bigger clients and they are taking an interest in how security is managed, meaning some subsidiaries now need to achieve SOC 2 or ISO 27001 certification. At the same time the CTO is keen to ensure the company stays “tech-first” in its approach to security, and avoid introducing manual or inefficient GRC processes.*
+*The company now has much bigger clients and they are taking an interest in how security is managed, meaning some subsidiaries now need to achieve SOC 2 or ISO 27001 certification. At the same time the CTO is keen to ensure the company stays “tech-first” in its approach to security, and avoid introducing manual or inefficient GRC processes.*🚀
 
 
 <h1><span style="color:#D6336C;">Question: Given the changes to the company, what (if anything) changes about your answers to the questions in the first part? 
