@@ -1,89 +1,76 @@
-# 🚀 Security Strategy at a Fast-Growing Startup
+# Security at a Fast-Growing Startup
 
-## 📘 Scenario
+You have just joined a very fast-growing startup as the only security person. The company has roughly 100 employees, and the CTO has been making decisions based on functional need — security has not always been considered.
 
-You have just joined a very fast-growing startup as the **only security person**. The company has roughly **100 employees**, and the **CTO** has been making decisions based on functional need — **security has not always been considered**.
-
-You’ve been hired by the CTO for your **security knowledge and unique perspective**.
+You’ve been hired by the CTO for your security knowledge and unique perspective.
 
 The company has:
-- Built a **custom CRM solution** sold to clients
-- Hosted it on **AWS**
-- Uses **CI/CD tooling** to make a handful of production changes per day
-- Relies on **SaaS** tools for all other services (email, office, etc.)
-- Encourages **staff to purchase their own IT** (laptops, accessories) and expense it
+- Built a custom CRM solution sold to clients
+- Hosted it on AWS
+- Uses CI/CD tooling to make a handful of production changes per day
+- Relies on SaaS tools for all other services (email, office, etc.)
+- Encourages staff to purchase their own IT (laptops, accessories) and expense it
 
 ---
 
-## 🔍 How Would You Identify and Prioritise Potential Security Problems?
+## How would you identify and prioritise potential security problems?
 
-### 🧠 Initial Thoughts / Assumptions
+Initial thoughts/assumptions:
+- Small org, immature functions, you're first security hire – so be pragmatic and resource-conscious
+- AWS likely misconfigured – check for public buckets, overly permissive roles
+- CI/CD probably lacks deployment control, peer review, security scans
+- SaaS likely sprawling; what data is going where?
+- Laptops/BYOD: asset management, encryption, VPNs, antivirus, MDM (Azure Intune), etc
+- No phishing training
 
-- Small org, **immature functions**, and you're the **first security hire** — solutions must be pragmatic and resource-conscious.
-- **AWS architecture** likely lacks security best practices; needs a review.
-- **CI/CD** pipelines may lack deployment control, peer review, and security scans.
-- **Third-party SaaS** usage should be audited: what data is being shared and how?
-- **Laptops & BYOD**: asset management, encryption, VPNs, antivirus, MDM (Azure Intune), etc.
-- No apparent **phishing training** in place.
+Approach:
+- Org is small; go for pragmatic, high impact moves, be security enabler, not blocker
+- CRM has customer PII – reputational risk if breached while growing
+- Focus on reducing immediate risk, not building perfect governance
+- Assume little or no documentation
 
----
-
-## 🧭 Approach
-
-Taking into account:
-- Org size, resource limitations
-- CRM with **customer PII** — reputation risk during growth phase
-- Focus first on **reducing immediate risk** vs. building long-term governance
-- Start assuming **limited/no documentation**
-
-### ✍️ Scoping Operation
-
-Scoping covers:
-- Review of **AWS**
-- Review of **CI/CD & deployment**
-- Review of **company assets & third-party SaaS**
+Scoping operation:
+- Review of AWS
+- Review of CI/CD & deployment
+- Review of company assets & third-party SaaS
 
 ---
 
-## 🔩 Review Areas
+## Review Areas
 
-### 1. AWS Architecture
-
+### AWS Architecture
 - Architecture diagrams for CRM?
 - How are CRM endpoints exposed?
 - How is authentication handled?
 
-#### AWS Account(s)
-
-- IAM roles and permissions: **Who has access and why?**
-- **MFA**: Required for AWS? Using SSO via Okta/Ping?
-- Network segregation: VPCs, security groups
-- **Encryption**: Are S3/RDS encrypted?
-- **Logging/Monitoring**: CloudTrail, CloudWatch, GuardDuty?
-- Availability: Redundancy? Backups?
-- **Secrets management**: How are production secrets handled?
-
----
-
-### 2. CI/CD Pipelines
-
-- Who can deploy to production?
-- Are there **peer reviews** before merging?
-- Any **SAST/DAST scanning**?
-- Are there separate environments (dev/test/prod)? Are they **mirrored**?
+AWS account(s):
+- IAM roles + permissions — who has access and why?
+- Is MFA required for AWS? Using SSO via Okta/Ping?
+- Network segregation? VPCs, security groups?
+- Are S3/RDS encrypted?
+- Logging/monitoring — CloudTrail, CloudWatch, GuardDuty?
+- Availability — is there redundancy? backups?
+- Secrets management — how are production secrets handled?
 
 ---
 
-### 3. Company Assets / Third Parties
+### CI/CD Pipelines
+- Who can deploy to prod?
+- Are there peer reviews before merging?
+- Any SAST/DAST scanning?
+- Separate environments (dev/test/prod)? Are they mirrored?
 
-- **BYOD**: Any device controls?
-- Is there an **asset inventory**?
+---
+
+### Company assets / third parties
+- BYOD — any device controls?
+- Is there an asset inventory?
 - Are laptops:
   - Encrypted?
-  - Updated regularly?
-  - Running Antivirus / DLP?
-- Is an **MDM** solution deployed?
-- JML process: Are assets/data retrieved on offboarding?
+  - Up to date?
+  - Running antivirus / DLP?
+- Is MDM deployed?
+- JML process — are assets/data retrieved on offboarding?
 - SaaS vendor list:
   - What data is shared?
   - How is it shared?
@@ -91,173 +78,147 @@ Scoping covers:
 
 ---
 
-## 🎤 Info Gathering
+## Info Gathering
 
-Conduct interviews with SMEs:
-> “Can you walk me through how you do X?”
-> “How is Y handled today?”
+Talk to SMEs:
+- “Can you walk me through how you do X?”
+- “How is Y handled today?”
 
-Lean on:
+Use:
 - Documentation
 - Policies / procedures
 
 ---
 
-## 📊 Prioritisation: Risk x Likelihood Matrix
+## Prioritisation: Risk x Likelihood matrix
 
-### 🔴 High Priority
+### High priority
+- Implement phishing training
+- Encrypt databases with PII
+- Protect assets (MDM, JML, remote wipes, AV/DLP)
+- Scan repos for plaintext secrets
+- Enforce MFA for all systems
 
-- Implement **phishing training**
-- Encrypt databases with **PII**
-- Protect assets with:
-  - MDM
-  - JML
-  - Remote wipes
-  - AV/DLP
-- Scan repos for **plaintext secrets**
-- Enforce **MFA** for all systems
-
-### 🟠 Medium Priority
-
-- Enable logging + alerts for **IOC**
-- Company-issued laptops with:
-  - Default security image (VPN, AV, DLP)
+### Medium priority
+- Enable logging + alerts for IOC
+- Company-issued laptops with default security image (VPN, AV, DLP)
 - Peer review for deployments
-- Monthly/quarterly **IAM reviews**
-- Build and maintain **asset inventory**
+- Monthly/quarterly IAM reviews
+- Asset inventory
 
-### 🟡 Low Priority
-
-- **Vendor risk** assessments
+### Low priority
+- Vendor risk assessments
 - Define policies/procedures (JML, governance)
 - Diagram AWS architecture
-- Build medium/long-term **security roadmap**
-- Create **Infosec policy**, guidance (e.g. password best practices)
-- Begin **security standard** scoping (e.g. CE, ISO 27001)
+- Build medium/long-term security roadmap
+- Infosec policy, guidance (e.g. password best practices)
+- Begin security standard scoping (e.g. CE, ISO 27001)
 
 ---
 
-## 📈 The Company Has Grown
+## The company has grown
 
-Now:
 - 5,000+ employees
 - CRM, AWS, CI/CD scaled well (100+ daily deployments)
-- Expanded via **global acquisitions**
-- Bigger clients now expect **SOC 2 / ISO 27001**
-- CTO wants to stay **tech-first**, avoid manual GRC
+- Expanded via global acquisitions
+- Bigger clients now expect SOC 2 / ISO 27001
+- CTO wants to stay tech-first, avoid manual GRC
 
 ---
 
-## 🧠 Updated Perspective
+## Updated Perspective
 
-Shift from **firefighting** → **governance and structure**
+Now it's about adding structure + governance, not firefighting
 
-### 🔁 Revisiting Prioritisation
+### Revisit Prioritisation
+- Many “low priority” items become high priority
 
-> The old **low priority** items now become high priority
-
-#### ✅ High Priority Now Includes:
-
-- Centralised **policies, procedures, guidelines**
-- Documented **controls & control owners**
-- **Formal risk register**
-- **Subsidiary integration**: Align to parent governance/control set
+New high priority:
+- Policies, procedures, guidelines (centralised)
+- Controls & control owners
+- Risk register
+- Subsidiary integration to parent governance/control set
 - Global compliance: GDPR, APRA (AU), DORA (EU)
 
 ---
 
-## 🎯 Challenges for ISO 27001 Certification
+## ISO 27001
 
-### 🗂️ Documentation
+### Challenges:
 
+#### Documentation
 - Lack of central documentation
 - Existing processes operate in silos
-- Need to perform **gap analysis**
-- Must drive **team buy-in** to fix process weaknesses
+- Need to perform gap analysis
+- Must drive team buy-in to fix process weaknesses
 
-### ⚙️ Technical Gaps
-
+#### Technical Gaps
 - Varying stacks, inconsistent processes
 - Need for standard SDLC, patch mgmt
-- **Automated playbooks** (e.g. CIS via Ansible) can help
+- Automated playbooks (e.g. CIS via Ansible) can help
 
-### 🧑‍💻 Resource Constraints
-
+#### Resource Constraints
 - People wearing multiple hats
-- Convince teams to **prioritise security controls**
+- Convince teams to prioritise security controls
 
-### ⚖️ Risk Awareness
-
-- ISO requires **risk-based thinking**
+#### Risk Awareness
+- ISO requires risk-based thinking
 - Risk mindset likely missing in fast-growth mode
-- Introduce **proactive risk management**
+- Need to introduce proactive risk mgmt
 
-### 👥 Cultural Shift
+#### Cultural Shift
 
-#### Management Buy-In
-
+Management Buy-In:
 - Why implement ISO?
   - Reduce breach risk
   - Improve reputation
   - Unlock enterprise sales
 - Use real-world examples as rationale
 
-#### Employee Buy-In
-
+Employee Buy-In:
 - Frame benefits in their language:
-  - DevOps: "Standardised playbooks = time saved"
-  - GRC: "Less firefighting"
+  - DevOps: "standardised playbooks = time saved"
+  - GRC: "less firefighting"
 
 ---
 
-## 🤖 Automating GRC
+## Automating GRC
 
-### Goal: **Minimise Manual Processes**
+### Goal: Minimise manual processes
 
-### 🧠 Pitching GRC Engineering
+### Pitching GRC Engineering
 
-Option A (Traditional):
-> Manual evidence collection, screenshots, GRC tools chasing teams
+Option A (traditional):
+- Manual evidence collection, screenshots, GRC tools chasing teams
 
-Option B (GRC Engineering):
-> Use low/no-code or API tools to auto-collect evidence
-
+Option B (GRC engineering):
+- Use low/no-code or API tools to auto-collect evidence
 - Upskills GRC
 - Reduces burden on tech teams
-- Enables **continuous monitoring**
+- Enables continuous monitoring
 
-### 🔧 Implementation Path
+---
 
-#### For Main Org (SaaS-oriented)
+## Implementation
 
+For main org (SaaS-oriented):
 - Use Vanta/Drata for SOC 2/ISO 27001
 - Map Trust Services Criteria → Controls → Evidence (via API)
 
-#### For Subsidiaries (non-SaaS or on-prem)
-
-- Perform **gap analysis**
+For subsidiaries (non-SaaS or on-prem):
+- Gap analysis
 - Migrate to main org’s tech stack/tools
 - Integrate over time to align GRC + control sets
 
-#### Consider Flexible Options
-
-- Tools like **JupiterOne**, **Backstage**
-- **Policy-as-code**
-- **Open source** solutions for control enforcement
-
-### 🧩 Key Concepts
-
-- Automate evidence collection via:
-  - API queries
-  - Real-time system data
-- Minimise stakeholder fatigue
-- Build once, monitor continuously
+### Consider flexible options:
+- JupiterOne, Backstage
+- Policy-as-code
+- Open source for control enforcement
 
 ---
 
-## 🏁 Final Notes
+## Key Concepts
 
-This is **not an exhaustive list** — it’s a structured view of initial and scaled security approaches based on the real-world context of a fast-growing tech company.
-
-- Short-term: reduce risk quickly
-- Long-term: build scalable governance and automation
+- Automate evidence collection (API, real-time system data)
+- Minimise stakeholder fatigue
+- Build once, monitor continuously
