@@ -30,6 +30,40 @@ Start with a quantitative approach to identifying the key risks from a scoping o
 - A review of our CI/CD and deployment pipelines
 - A review of third parties and company assets 
 
+Expanding further, things I would be considering for each of the above bulletpoints:
+
+#AWS Architecture:
+- Any architecture diagrams that illustrate the CRM solution?
+- How are we selling the CRM solution to customers? Are we exposing any endpoints?
+- How is authentication handled?
+
+#AWS Account(s):
+- IAM user roles and permissions, who has access to what and why. Are there any overreaching permissions?
+- MFA, is MFA required to access AWS accounts? Do we have other ISPs (OKTA,PING) that can authenticate users securely using other authentication methods (SSO)?
+- Network segregation - VPC architecture, security groups
+- Encryption - especially in the context of customer PII, are RDS/S3’s encrypted by default? What protocols are being used?
+- Logging and monitoring - thinking is cloudtrail, cloudwatch, guardduty enabled? Where are our logs and what are we alerting on (if anything)
+- Availability - do we have any redundancy in our deployment, what geographical area are we deployed to? Do we take backups?
+- Secrets - how are production secrets being handled? 
+
+#CI/CD:
+- Who has permissions to push to prod? Is there a review cycle involved in this, or can anyone commit and merge? 
+- Do we perform any SAST/DAST scanning in the build pipeline to check for packages or secrets being pushed to public repos?
+- Do we have any environment separation? Ie do we have a prod/test environment. Do they actually mirror each other? 
+
+
+
+
+#Company Assets / Third Parties:
+- BYOD - do we have any controls on users BYOD devices?
+- Do we have any visibility into the assets we own?
+- Are laptops encrypted?
+- Are laptops updated? Do software packages get updated?
+- Is Antivirus/DLP deployed? 
+ -Do we have any MDM solutions to containerise company assets?
+ -JML process. What happens when a user leaves? Does company data get deleted?
+ -Do we have an asset list of SaaS solutions we use?
+ -What data are we sharing with these SaaS tools? How is the data being shared? What type of data is it? What are the volumes
 
 
  
