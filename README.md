@@ -11,3 +11,12 @@
 
 
 <h1><span style="color:#D6336C;">How would you identify and prioritise any potential security problems?</span></h1>
+
+# Initial thoughts / assumptions being made from the initial read:
+
+- Small org and immature functions, first security hire. Have to be pragmatic with solutions and with what is addressed based on resource available 
+- AWS architecture probably would need a review, as there likely wouldn’t have had security implementations 
+- CI/CD would probably need a review, assuming it's to a github repo. Who can make deployments? What testing is performed? Change process/ 2 eyes reviews?
+- Potentially would need to get a handle on third parties being used. What data are we sending these third parties? How is that being protected? On a light touch might have to ascertain security artifacts/trust center to see SaaS products we are using are in scope and assessed
+- Laptops IT. Review of how this is being managed. Is there an asset list or inventory. Would look to deploy MDM solutions using SaaS (Azure InTune) in order to protect assets. Seems like employers can work from home, how do we securely connect to corp network, VPN? Also think about Antivirus, DLP.
+- Assuming Phishing training is not being performed at this time. 
