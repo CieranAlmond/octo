@@ -10,7 +10,7 @@
 
 <h1><span style="color:#D6336C;">Question: How would you identify and prioritise any potential security problems❓</span></h1>
 
-# Initial thoughts / assumptions being made from initial impressions 🧠:
+# Initial thoughts / assumptions being made🧠:
 
 - Small org and immature functions, first security hire. Have to be pragmatic with solutions and with what is addressed based on resource available 
 - AWS architecture probably would need a review, as there likely wouldn’t have had security implementations 
