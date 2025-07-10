@@ -30,12 +30,12 @@ Start with a quantitative approach to identifying the key risks from a scoping o
 
 Expanding further, things I would be considering for each of the above bulletpoints:
 
-# AWS Architecture:
+# AWS Architecture 🎯:
 - Any architecture diagrams that illustrate the CRM solution?
 - How are we selling the CRM solution to customers? Are we exposing any endpoints?
 - How is authentication handled?
 
-# AWS Account(s):
+# AWS Account(s) 🎯:
 - IAM user roles and permissions, who has access to what and why. Are there any overreaching permissions?
 - MFA, is MFA required to access AWS accounts? Do we have other ISPs (OKTA,PING) that can authenticate users securely using other authentication methods (SSO)?
 - Network segregation - VPC architecture, security groups
@@ -44,7 +44,7 @@ Expanding further, things I would be considering for each of the above bulletpoi
 - Availability - do we have any redundancy in our deployment, what geographical area are we deployed to? Do we take backups?
 - Secrets - how are production secrets being handled? 
 
-# CI/CD:
+# CI/CD 🎯:
 - Who has permissions to push to prod? Is there a review cycle involved in this, or can anyone commit and merge? 
 - Do we perform any SAST/DAST scanning in the build pipeline to check for packages or secrets being pushed to public repos?
 - Do we have any environment separation? Ie do we have a prod/test environment. Do they actually mirror each other? 
@@ -52,7 +52,7 @@ Expanding further, things I would be considering for each of the above bulletpoi
 
 
 
-# Company Assets / Third Parties:
+# Company Assets / Third Parties 🎯:
 - BYOD - do we have any controls on users BYOD devices?
 - Do we have any visibility into the assets we own?
 - Are laptops encrypted?
@@ -63,7 +63,7 @@ Expanding further, things I would be considering for each of the above bulletpoi
  -Do we have an asset list of SaaS solutions we use?
  -What data are we sharing with these SaaS tools? How is the data being shared? What type of data is it? What are the volumes
 
-Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
+📝 Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
 
 <h1><span style="color:#D6336C;">Question: Making some assumptions about what you might expect to find, what are the most important controls you would look to implement?
 </span></h1>
