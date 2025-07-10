@@ -63,7 +63,7 @@ Expanding further, things I would be considering for each of the above bulletpoi
  -Do we have an asset list of SaaS solutions we use?
  -What data are we sharing with these SaaS tools? How is the data being shared? What type of data is it? What are the volumes
 
-📝 Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
+Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
 
 <h1><span style="color:#D6336C;">Question: Making some assumptions about what you might expect to find, what are the most important controls you would look to implement❓
 </span></h1>
