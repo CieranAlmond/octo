@@ -72,9 +72,9 @@ We can then take these categories and document gaps based on the answers provide
 
 For example, let's say that the laptops are not encrypted:
 
-| Risk Description | Likelihood | Impact |Overall Risk Score |
-|----------|----------|---------|-----------|--------|
-| Company-issued or BYOD laptops used to access sensitive systems and data are not encrypted at rest. Potential loss, theft or compromise of company data, potentially containing PII.    | Data     | More     |
+| Risk Description                                                                                                                                                                                  | NIST Category | Likelihood | Impact | Overall Risk Score |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------|--------|--------------------|
+| Company-issued or BYOD laptops used to access sensitive systems and data are not encrypted at rest. Potential loss, theft or compromise of company data, potentially containing PII. | Protect       | High       | High   | Critical           |
 
 
 Company-issued or BYOD laptops used to access sensitive systems and data are not encrypted at rest. Potential loss, theft or compromise of company data, potentially containing PII.
