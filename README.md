@@ -98,6 +98,7 @@ Low Priority
 
 Again not an exhaustive list, but just a few examples from each area identified during the scoping stage. 
 
+---
 
 *The company has been a success and now has over 5000 employees. The CRM solution they built, AWS environment and CI/CD tooling have scaled well and they are now making over 100 production changes per day. In order to expand internationally they have bought several smaller companies around the world.*
 
