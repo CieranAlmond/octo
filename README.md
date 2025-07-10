@@ -49,21 +49,20 @@ Using the NIST framework we can then categorise current activities and gaps into
 - Network segregation - VPC architecture, security groups
 - Encryption - especially in the context of customer PII, are RDS/S3’s encrypted by default? What protocols are being used?
 - Secrets - how are production secrets being handled?
-- Do we perform any SAST/DAST scanning in the build pipeline to check for packages or secrets being pushed to public repos?
 - Are laptops encrypted?
 - Are laptops updated? Do software packages get updated?
 - Is Antivirus/DLP deployed?
 - Do we have any MDM solutions to containerise company assets?
-- JML process. What happens when a user leaves? Does company data get deleted?
 
 # Detect
 
 - Logging and monitoring - thinking is cloudtrail, cloudwatch, guardduty enabled? Where are our logs and what are we alerting on (if anything)
-
-
+- JML process. What happens when a user leaves? Does company data get deleted?
+- Do we perform any SAST/DAST scanning in the build pipeline to check for packages or secrets being pushed to public repos?
+  
 # Repond
  
- - Are any incident management or BCP/DR processes in place
+ - Are any incident management or BCP/DR processes in place?
 
 # Recover
 
