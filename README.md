@@ -21,7 +21,7 @@
 
 # Approach:
 
-My approach would take into consideration the size and resource of the company and the infosec team (me). I am also taking into consideration that the CRM solution we are selling would contain customer data containing PII. Reputation is likely an important factor during this “growth stage” of the journey. The approach I would take would focus less on governance and establishing processes, and more focus on reducing the immediate risk based on the scenario. Establishing good practice, process and procedure would be a later goal. With that said, it would still make sense to follow a framework such as NIST to identify and prioritize risks with full implementation coming at a later stage as we look to mature the core functions of identify, protect, detect, respond, recover. 
+My approach would take into consideration the size and resource of the company and the infosec team (me). I am also taking into consideration that the CRM solution we are selling would contain customer data containing PII. Reputation is likely an important factor during this “growth stage” of the journey. The approach I would take would focus less on governance and establishing processes, and more focus on reducing the immediate risk based on the scenario. Establishing good practice, process and procedure would be a later goal. With that said, it would still make sense to follow a framework such as NIST CSF to identify and prioritize risks with full implementation coming at a later stage as we look to mature the core functions of identify, protect, detect, respond, recover. 
 
 Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
 
@@ -31,7 +31,7 @@ I am again assuming there is little or no documentation so would start with the 
 - A review of our CI/CD and deployment pipelines
 - A review of third parties and company assets 
 
-Using the NIST framework we can then categorise current activities and gaps into the following
+Using the NIST CSF we can then categorise current activities and gaps into the following
 
 # Identify
 
