@@ -1,6 +1,4 @@
-# 🐙
-
-# Octopus Energy Technical Task  
+# 🐙 Octopus Energy Technical Task  
 ### Cieran Almond
 
 *You have just joined a very fast growing startup as the only security person. The company has roughly 100 employees and the CTO has been making decisions about what is needed based on function. Security is not always considered.*
