@@ -147,6 +147,51 @@ One new challenge being faced is that it's likely now the main organisation is o
 
 Another challenge is the company size likely has dedicated resources just for more niche parts of the business, such as regulatory compliance obligations. How does the organisation remain compliant with GDPR? Has the company expanded internationally? Would we now have to comply with their regional regulatory compliance obligations, ie APRA for Australia, EU DORA, etc?. These are the new challenges and questions I'd expect to be asked as a high priority. 
 
+<h1><span style="color:#D6336C;">Question: What do you think will be the biggest challenges, for a startup that’s grown quickly, in getting security certifications such as ISO 27001? 
+</span></h1>
+
+ISO27001 requires a well documented and process driven framework that effectively illustrates controls and controls owners operating them effectively.  
+
+Drawing from performing the CE gap analysis at my current org, the challenges we faced could be broken down into a few categories.
+
+# Documentation: 
+Documentation either is few and far between for operating processes, or if a process is well documented, operates in silos and therefore no other teams have visibility. 
+
+For a startup company, trying to introduce formal policies and procedures that are operated centrally can be seen as something bureaucratic that isn’t helping drive growth or mission success. The other challenge will also be building the guardrails to effectively govern the policies being introduced, as these also likely don’t exist in the current setup. A gap analysis would have to be performed to identity non conformities/gaps against ISO27001 processes, and then buy-in would be needed from teams operating ineffective processes to make technical changes to address the gaps. 
+
+# Tech:
+Again, from a lack of central governance of what “good” looks like, it’s highly likely the product has been built around multiple different tech stacks, backup processes, security processes, etc. 
+The solution being again, formal documentation needs to establish good SDLC practices, Patch Management, etc. to better govern these processes. Again controls need to be implemented to make sure governance is effective. Procedures should look to encourage standardisation and can perhaps reference out to playbooks in a Jira/Git repo as a point of reference to standardised deployments. These playbooks can have CIS benchmarks baked in to offer a baseline level of security. 
+
+# Resource:
+It is highly likely that for a startup, there are people wearing many hats. This means that when it comes to implementing technical controls that align to a standard, they just may not have the capacity. The challenge here being there will need to be a driving factor to convince teams to perform implementation work, against what they likely consider higher priority items.
+
+# Risk:
+ISO27001 will fundamentally change the way the company thinks about risk, and it's entirely probable that risk hasn’t been much of a thought during the growth stages. Since ISO27001 has a hard requirement to operate a form of risk register the idea is to think about risk before it materialises, and how we can better manage risks by operating controls to reduce its inherent impact.  The hard part again is this is probably seen as a bureaucratic process, but if done right, it can help reduce firefighting efforts teams are likely wasting resources on, and better enable decision making as we can make a more informed decision from a security perspective. 
+
+# Culture:
+Management buy-in. Ultimately it’s critical to get management buy-in for a fast paced startup. Without management help, it’s very difficult to achieve any of the above mentioned points. The difficulty to convince management would be the why. Why are we spending time and resources to implement these controls, to align to this standard? The why can be supported by board objectives or KPI’s; for example we can reduce overall risk of a cyber attack or material loss resulting in financial or reputational damage. Having an ISO27001 can be used as a driving force to present the company in a positive light, as it is internationally recognised as a baseline, and can be used to drive more sales. Usually you can make it more relatable by telling a story of what happened to x company (in a similar industry) and how ISO27001 saved them from x attack, or positively resulted in more sales.  
+
+Employee buy-in. This would just represent an overall culture shift. Again it’s important to communicate the why though this might look slightly different to the why of management. As an example, to a devops team, this can be demonstrated by showing the effectiveness of having centralised playbooks with prebaked CIS benchmarks in an ansible playbook. This saves devops teams time deploying these manually, and saves time overall by having standardisation meaning they don’t have to write custom scripts every time they deploy. 
+
+<h1><span style="color:#D6336C;">Question:How would you introduce GRC requirements and initiatives while minimising manual processes?
+</span></h1>
 
 
- 
+I think the key here is to sell the idea of GRC engineering to management, and then stakeholders. In theory it should be a good sell as you are presenting the following options
+
+> operate a manual GRC process, with a GRC tool or spreadsheet. Have GRC analysts chase engineering teams, HR, Legal, Privacy, etc asking for screenshots, which takes away time from teams in order to satisfy compliance obligations.
+
+> perform GRC engineering. Have GRC analysts get all the data they need in either a code, low code or SaaS tool. This upskills your GRC team, reduces strain on other teams, and also improves GRC from a just in time / point in time compliance obligation into a continuous monitoring program that effectively operates controls. Improved security. 
+
+In the context of the scenario "subsidiaries now need to achieve SOC 2” presents a challenge in itself since our main org is heavily SaaS oriented, so it would have lended itself to an out of the box buy side GRC tool such as Vanta or Drata. However, it’s highly likely that the subsidiaries operate separate processes that don’t necessarily follow a normal workflow, or don’t rely on a SaaS solution (could be onprem). In this case then integrating GRC buy side tools becomes an issue as their out of the box API’s wouldn’t be able to work. 
+
+The two options I see:
+
+Use a GRC SaaS tool for the main org (which by the scenario would fit very well). Perform a gap analysis on the subsidiary to understand what systems they are using, and eventually migrate over to the tools the main org is using. This way we achieve a single view, while also achieving added benefits of not having to operate effectively 2 control sets (one for the subsidiary, one for the main org). We can rely entirely on the main orgs controls to manage this now integrated subsidiary. 
+
+Consider a more flexible option like JupiterOne, Backstage, or use policy-as-code or open source alternatives for different use-cases. 
+
+Ultimately regardless of the implementation a mapping of SOC 2 Trust Services Criteria to our controls would take place. With these control descriptions we can contextualise how these apply to our business, and then perform either API calls to get the data in real time or make queries to get data to perform continuous monitoring of these controls. There are considerations that would have to take place regarding the permissions assigned to analysts in terms of what they are allowed to view and get, but this could be solved through just in time access or time based access tokens if needed. 
+
+Ultimately this creates an automated workstream that requires very little manual work once set up, and places less resource burden on the stakeholders of the GRC team. 
