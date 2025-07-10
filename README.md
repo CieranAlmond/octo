@@ -109,6 +109,44 @@ Again not an exhaustive list, but just a few examples from each area identified 
 </span></h1>
 
 
+With the context of the organisation now being much larger, more mature, we should shift our approach from identifying the most pressing risks and firefighting them as a priority, to a more governance approach. 
+
+So if we revisit the prioritisation list:
+
+> High Priority
+
+> Phishing program to better educate users (as this is one of the most common attack vectors)
+> Encrypt databases containing PII
+> Protect assets by deploying MDM solution. Establish a JML process for safe return of assets, or perform remote wipes to ensure company data is deleted. Deploy AV on company machines
+> Scan public repos to ensure no secrets in plaintext in code
+> Ensure MFA is enabled for users accessing company assets and data
+
+> Medium Priority
+
+> Enable logging and start creating alerts for key indicators of compromise
+> Work towards getting company issued machines. Create an image that builds in security controls. Have a VPN/AV/DLP deployed by default
+> Introduce a change process for deploying. At least have a peer review of deployments to prevent damaging codebase.
+> Perform IAM reviews on a monthly/quarterly basis depending on permissions granted.#
+> Establish an asset inventory / list. 
+
+
+> Low Priority
+
+> Vendor risk - obtain security attestations, check scope of systems being procured
+> Build policies / procedures to better govern JML, Data Governance, etc
+> Documentation / diagramming of AWS architecture
+> Build a medium to long term security roadmap
+> Create a high level infosec policy, issue guidance on best practise (password length, data sharing, etc) - have this socialised during onboarding or within a HR platform
+> Consider scoping the company against a security standard (CE, ISO, etc) to establish a baseline
+
+What I would expect now is that the items considered lower priority would now invert. What we would now be looking to do is build good governance, operate against frameworks, perform horizon scanning (for future regulatory/security compliance obligations), with the assumption that those higher priority items have now been remediated.
+
+We should now look to build centralised, easily accessible Policies, Procedures, and Guidelines. These should have controls mapped to test effectiveness (either in the form of traditional GRC or GRC Engineering), have established a formal risk process and risk register, and have a way to track these risks.
+
+One new challenge being faced is that it's likely now the main organisation is operating effectively, but the subsidiaries or acquisitions probably don’t align to the same governance the main org is, so the new challenge would be building a framework that allows you to better integrate subsidiaries into the governance and control frameworks of the main organization. 
+
+Another challenge is the company size likely has dedicated resources just for more niche parts of the business, such as regulatory compliance obligations. How does the organisation remain compliant with GDPR? Has the company expanded internationally? Would we now have to comply with their regional regulatory compliance obligations, ie APRA for Australia, EU DORA, etc?. These are the new challenges and questions I'd expect to be asked as a high priority. 
+
 
 
  
