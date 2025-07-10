@@ -21,49 +21,77 @@
 
 # Approach:
 
-My approach would take into consideration the size and resource of the company and the infosec team (me). I am also taking into consideration that the CRM solution we are selling would contain customer data containing PII. Reputation is likely an important factor during this “growth stage” of the journey. The approach I would take would focus less on governance and establishing processes, and more focus on reducing the immediate risk based on the scenario. Establishing good practice, process and procedure would be a later goal. I am again assuming there is little or no documentation so would start with the following:
+My approach would take into consideration the size and resource of the company and the infosec team (me). I am also taking into consideration that the CRM solution we are selling would contain customer data containing PII. Reputation is likely an important factor during this “growth stage” of the journey. The approach I would take would focus less on governance and establishing processes, and more focus on reducing the immediate risk based on the scenario. Establishing good practice, process and procedure would be a later goal. With that said, it would still make sense to follow a framework such as NIST to identify and prioritize risks with full implementation coming at a later stage as we look to mature the core functions of identify, protect, detect, respond, recover. 
 
-Start with a quantitative approach to identifying the key risks from a scoping operation. For this exercise the scope would be similar to my “initial thoughts” and would look to encompass 
+Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
+
+I am again assuming there is little or no documentation so would start with the following:
+
 - A review of AWS 
 - A review of our CI/CD and deployment pipelines
 - A review of third parties and company assets 
 
-Expanding further, things I would be considering for each of the above bulletpoints:
+Using the NIST framework we can then categorise current activities and gaps into the following
 
-# AWS Architecture 🎯:
-- Any architecture diagrams that illustrate the CRM solution?
-- How are we selling the CRM solution to customers? Are we exposing any endpoints?
-- How is authentication handled?
+# Identify
 
-# AWS Account(s) 🎯:
 - IAM user roles and permissions, who has access to what and why. Are there any overreaching permissions?
+- Who has permissions to push to prod? Is there a review cycle involved in this, or can anyone commit and merge?
+- Do we have any environmental separation? Ie do we have a prod/test environment. Do they actually mirror each other?
+- Do we have any visibility into the assets we own?
+- Do we have an asset list of SaaS solutions we use?
+- What data are we sharing with these SaaS tools? How is the data being shared? What type of data is it? What are the volumes?
+- BYOD - do we have any controls on users BYOD devices?
+
+# Protect
+
 - MFA, is MFA required to access AWS accounts? Do we have other ISPs (OKTA,PING) that can authenticate users securely using other authentication methods (SSO)?
 - Network segregation - VPC architecture, security groups
 - Encryption - especially in the context of customer PII, are RDS/S3’s encrypted by default? What protocols are being used?
-- Logging and monitoring - thinking is cloudtrail, cloudwatch, guardduty enabled? Where are our logs and what are we alerting on (if anything)
-- Availability - do we have any redundancy in our deployment, what geographical area are we deployed to? Do we take backups?
-- Secrets - how are production secrets being handled? 
-
-# CI/CD 🎯:
-- Who has permissions to push to prod? Is there a review cycle involved in this, or can anyone commit and merge? 
+- Secrets - how are production secrets being handled?
 - Do we perform any SAST/DAST scanning in the build pipeline to check for packages or secrets being pushed to public repos?
-- Do we have any environment separation? Ie do we have a prod/test environment. Do they actually mirror each other? 
-
-
-
-
-# Company Assets / Third Parties 🎯:
-- BYOD - do we have any controls on users BYOD devices?
-- Do we have any visibility into the assets we own?
 - Are laptops encrypted?
 - Are laptops updated? Do software packages get updated?
-- Is Antivirus/DLP deployed? 
- -Do we have any MDM solutions to containerise company assets?
- -JML process. What happens when a user leaves? Does company data get deleted?
- -Do we have an asset list of SaaS solutions we use?
- -What data are we sharing with these SaaS tools? How is the data being shared? What type of data is it? What are the volumes
+- Is Antivirus/DLP deployed?
+- Do we have any MDM solutions to containerise company assets?
+- JML process. What happens when a user leaves? Does company data get deleted?
 
-Identifying a lot of these problems would likely involve speaking to SME’s in respective business areas, so sit-down sessions asking “can you walk me through how you do x?” , or “how do you do y?”. If possible I would lean on any documentation, policies or procedures to help answer these questions. 
+# Detect
+
+- Logging and monitoring - thinking is cloudtrail, cloudwatch, guardduty enabled? Where are our logs and what are we alerting on (if anything)
+
+
+# Repond
+ 
+ - Are any incident management or BCP/DR processes in place
+
+# Recover
+
+- Availability - do we have any redundancy in our deployment, what geographical area are we deployed to? Do we take backups?
+
+We can then take these categories and document gaps based on the answers provided, and use a quantitative method (likelihood x impact) to create an overall risk rating, which will help us prioritise what should be remediated first. 
+
+For example, let's say that the laptops are not encrypted:
+
+Risk Description
+NIST Category
+Likelihood
+Impact 
+
+
+Overall Risk Score
+Company-issued or BYOD laptops used to access sensitive systems and data are not encrypted at rest. Potential loss, theft or compromise of company data, potentially containing PII.
+Protect 
+High
+High
+Critical
+
+
+
+This is to say this is not fool-proof, as we would also need to understand the context in which risks exist. For example, having an unpatched server running a vulnerable version of a software might on paper have a high inherent risk score, but if we consider it is not internet facing, then that would reduce the overall risk to something lower. 
+
+What this approach would not capture, and that is worth mentioning, is that it might overlook something like lack of any phishing or security training or awareness. Phishing is referenced in the MITRE ATTACK framework and is a really common way to start exploiting vulnerabilities, and in this scenario could be a very valuable thing to start working on early to reduce risk.
+
 
 <h1><span style="color:#D6336C;">Question: Making some assumptions about what you might expect to find, what are the most important controls you would look to implement❓
 </span></h1>
