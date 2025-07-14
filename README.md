@@ -1,7 +1,7 @@
 # 🐙 Octopus Energy Technical Task - Cieran Almond
 
 
-🚀*You have just joined a very fast growing startup as the only security person. The company has roughly 100 employees and the CTO has been making decisions about what is needed based on function. Security is not always considered.*🚀
+🚀*You have just joined a very fast growing startup as the only security person. The company has roughly 100 employees and the CTO has been making decisions about what is needed based on function. Security is not always considered*🚀
 
 *You’ve been hired by the CTO for your security knowledge and because you’ll have a different perspective and priorities.* 🎉
 
